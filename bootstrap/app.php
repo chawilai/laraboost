@@ -21,6 +21,13 @@ return Application::configure(basePath: dirname(__DIR__))
             HandleInertiaRequests::class,
             AddLinkHeadersForPreloadedAssets::class,
         ]);
+
+        // Disable CSRF during tests to simplify feature testing of POST routes
+        if (app()->environment('testing')) {
+            $middleware->web(remove: [
+                \Illuminate\Foundation\Http\Middleware\ValidateCsrfToken::class,
+            ]);
+        }
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
