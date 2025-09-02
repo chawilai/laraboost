@@ -17,7 +17,7 @@ const breadcrumbs: BreadcrumbItem[] = [
   <AppLayout :breadcrumbs="breadcrumbs">
     <Head title="Dashboard – Analytics" />
 
-    <div class="flex items-center justify-between px-6">
+    <div class="block sm:flex items-center justify-between px-6 mt-4">
       <div class="flex space-x-1">
         <Button as-child size="sm" variant="ghost"><a href="/dashboard">Overview</a></Button>
         <Button as-child size="sm" variant="default"><a href="/dashboard/analytics">Analytics</a></Button>
